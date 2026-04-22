@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Batuhan Kantas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">BK<span>.</span></a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html" class="active nav-cta">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- CONTACT PAGE -->
+  <section class="page">
+    <div class="contact-layout">
+
+      <!-- Left: info -->
+      <div class="contact-info">
+        <p class="section-label">Get in touch</p>
+        <h2>Let's talk</h2>
+        <p>I'm open to internship opportunities, collaboration on projects, or just a chat about web development and cloud computing. Drop me a message and I'll get back to you.</p>
+
+        <div class="contact-details">
+          <div class="contact-item">
+            <div class="contact-icon">📧</div>
+            <div class="contact-item-text">
+              <div class="contact-item-label">Email</div>
+              <div class="contact-item-value">Use the form →</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">💻</div>
+            <div class="contact-item-text">
+              <div class="contact-item-label">GitHub</div>
+              <div class="contact-item-value"><a href="https://github.com/sfs561" target="_blank" style="color: var(--navy-light); text-decoration:none;">github.com/sfs561</a></div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">🎓</div>
+            <div class="contact-item-text">
+              <div class="contact-item-label">University</div>
+              <div class="contact-item-value">University of York, IPC</div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div class="contact-item-text">
+              <div class="contact-item-label">Location</div>
+              <div class="contact-item-value">York, United Kingdom</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: form -->
+      <div class="form-card">
+        <p class="required-note">Fields marked <span class="required-star">*</span> are required</p>
+
+        <form id="contact-form" novalidate>
+
+          <div class="form-group">
+            <label for="name">Your Name <span class="required-star">*</span></label>
+            <input type="text" id="name" name="name" required placeholder="Jane Smith" autocomplete="name" />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address <span class="required-star">*</span></label>
+            <input type="email" id="email" name="email" required placeholder="jane@example.com" autocomplete="email" />
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message <span class="required-star">*</span></label>
+            <textarea id="message" name="message" required placeholder="Say hello, ask a question, or share an opportunity..."></textarea>
+          </div>
+
+          <button type="submit" id="submit-btn" class="btn-submit">
+            <span id="btn-text">Send message</span>
+            <span id="btn-icon">→</span>
+          </button>
+
+          <p id="form-status"></p>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>Batuhan Kantas <span>·</span> Computer Science, University of York <span>·</span>
+      <a href="https://github.com/sfs561" target="_blank">GitHub</a>
+    </p>
+  </footer>
+
+  <script>
+    // ── Hamburger ─────────────────────────────────────────────────
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+    hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+
+    // ── Supabase config ───────────────────────────────────────────
+    const SUPABASE_URL  = "https://ihsvjxcamsbvhydwrxga.supabase.co";
+    const SUPABASE_ANON = "sb_publishable_OjLAGXrJBRbByPJsdY6arw_NAXjvGSJ";
+
+    // ── Form submission ───────────────────────────────────────────
+    document.getElementById("contact-form")
+      .addEventListener("submit", async function (event) {
+        event.preventDefault();
+
+        const name    = document.getElementById("name").value.trim();
+        const email   = document.getElementById("email").value.trim();
+        const message = document.getElementById("message").value.trim();
+        const btn     = document.getElementById("submit-btn");
+        const btnText = document.getElementById("btn-text");
+        const btnIcon = document.getElementById("btn-icon");
+        const status  = document.getElementById("form-status");
+
+        // Client-side validation
+        if (!name || !email || !message) {
+          status.textContent = "Please fill in all required fields.";
+          status.style.color = "var(--error)";
+          return;
+        }
+
+        btn.disabled    = true;
+        btnText.textContent = "Sending...";
+        btnIcon.textContent = "⏳";
+        status.textContent  = "";
+
+        try {
+          const response = await fetch(
+            `${SUPABASE_URL}/rest/v1/contact_messages`,
+            {
+              method: "POST",
+              headers: {
+                "Content-Type":  "application/json",
+                "apikey":        SUPABASE_ANON,
+                "Authorization": `Bearer ${SUPABASE_ANON}`,
+                "Prefer":        "return=minimal"
+              },
+              body: JSON.stringify({ name, email, message })
+            }
+          );
+
+          if (response.ok) {
+            status.textContent = "✓ Message sent! I will be in touch soon.";
+            status.style.color = "var(--success)";
+            event.target.reset();
+          } else {
+            const err = await response.json();
+            console.error("Supabase error:", err);
+            status.textContent = "Something went wrong. Please try again.";
+            status.style.color = "var(--error)";
+          }
+        } catch (networkError) {
+          console.error("Network error:", networkError);
+          status.textContent = "Could not connect. Check your internet connection.";
+          status.style.color = "var(--error)";
+        } finally {
+          btn.disabled        = false;
+          btnText.textContent = "Send message";
+          btnIcon.textContent = "→";
+        }
+      });
+  </script>
+
+</body>
+</html>

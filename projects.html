@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects — Batuhan Kantas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">BK<span>.</span></a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="contact.html" class="nav-cta">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- PAGE CONTENT -->
+  <section class="page">
+    <p class="section-label">My work</p>
+    <h1 class="section-title">Projects</h1>
+    <p class="section-desc">A collection of things I've built, studied, and shipped. More on the way.</p>
+
+    <div class="projects-grid">
+
+      <!-- Project 1 -->
+      <div class="project-card">
+        <div class="project-banner">💻</div>
+        <div class="project-body">
+          <div class="project-stack">
+            <span class="stack-tag">HTML</span>
+            <span class="stack-tag">CSS</span>
+            <span class="stack-tag">JavaScript</span>
+            <span class="stack-tag">Supabase</span>
+            <span class="stack-tag">GitHub Pages</span>
+          </div>
+          <h3>Portfolio Website</h3>
+          <p>My professional portfolio site — the one you're looking at right now. Built with plain HTML, CSS, and JavaScript and deployed via GitHub Pages. Features a responsive design, a working contact form connected to Supabase, and blog notes.</p>
+          <div class="project-links">
+            <a href="https://github.com/sfs561/sfs561.github.io" target="_blank">⎋ Source code</a>
+            <a href="https://sfs561.github.io/" target="_blank">↗ Live demo</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2 — placeholder -->
+      <div class="project-card">
+        <div class="project-banner">🗄️</div>
+        <div class="project-body">
+          <div class="project-stack">
+            <span class="stack-tag">SQL</span>
+            <span class="stack-tag">PostgreSQL</span>
+          </div>
+          <h3>Database Design Project</h3>
+          <p>Designed and normalised a relational database schema for a university module. Applied 1NF, 2NF, and 3NF normalisation, wrote queries for data retrieval, and documented the design decisions.</p>
+          <div class="project-links">
+            <a href="https://github.com/sfs561" target="_blank">⎋ Source code</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3 — placeholder -->
+      <div class="project-card">
+        <div class="project-banner">🐍</div>
+        <div class="project-body">
+          <div class="project-stack">
+            <span class="stack-tag">Python</span>
+          </div>
+          <h3>Python Scripting Projects</h3>
+          <p>A collection of small Python scripts written while learning programming fundamentals — covering data structures, file I/O, and basic algorithms. Part of my first-year coursework.</p>
+          <div class="project-links">
+            <a href="https://github.com/sfs561" target="_blank">⎋ Source code</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>Batuhan Kantas <span>·</span> Computer Science, University of York <span>·</span>
+      <a href="https://github.com/sfs561" target="_blank">GitHub</a>
+    </p>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+    hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+  </script>
+
+</body>
+</html>
