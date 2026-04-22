@@ -3,227 +3,143 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My First Website</title>
+  <title>Batuhan Kantas — Computer Science</title>
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-  <header>
-  <div class="header-container">
-    <h1>Batuhan Kantas</h1>
-    <nav>
-      <a href="#hero">Home</a>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#skills">Skills</a>
-      <a href="#blog">Blog</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
-</header>
-  <main>
 
-    <!-- Hero section -->
-    <section id="hero">
-      <h2>Hello, I’m Batuhan</h2>
-      <p><strong>Computer Science undergraduate</strong> at the University of York..</p>
-      <p><em>Interested in backend development and cloud computing.</em></p>
-      <p><strong>What I do:</strong> I enjoy building reliable, data-driven applications that solve real problems for users.</p>
-      <p>
-        <a href="#projects">View my projects</a> |
-        <a href="YourCVLink.pdf">Download my CV</a>
-      </p>
-    </section>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">BK<span>.</span></a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html" class="nav-cta">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
 
-    <!-- About section -->
-    <section id="about">
-      <h2>About me</h2>
-      <p>I am a first-year Computer Science student learning the fundamentals of programming, web development, computer architecture, and databases.</p>
-      <p>I am currently looking for internship and placement opportunities where I can develop my skills in web development and data engineering.</p>
-      <p>Outside my studies, I enjoy hackathons, coding challenges, and working on small side projects.</p>
-    </section>
-
-    <!-- Projects section -->
-    <section id="projects">
-      <h2>Featured projects</h2>
-
-      <article>
-        <h3>Project 1 – Building My First Website</h3>
-        <p><strong>Summary:</strong> I'm creating my own professional website using GitHub Pages. This will become my digital portfolio for the rest of my degree.</p>
-        <p><strong>Tech stack:</strong> HTML, CSS, JavaScript</p>
-        <p><strong>My contribution:</strong> Everything.</p>
-        <p><strong>Challenges:</strong> I'm new to web development, so I started learning from the beginning.</p>
-        <p>
-          <a href="https://github.com/sfs561/sfs561.github.io">Source code</a> |
-          <a href="https://sfs561.github.io/">Live demo</a>
-        </p>
-      </article>
-    </section>
-
-    <!-- Skills section -->
-    <section id="skills">
-      <h2>Skills and tools</h2>
-      <p><strong>Languages:</strong> Python, Java, HTML, CSS, JavaScript, SQL</p>
-      <p><strong>Frameworks and tools:</strong> Git, GitHub, VS Code</p>
-      <p><strong>Interests:</strong> Web development, data engineering, cloud computing</p>
-    </section>
-
-    <!-- Blog / Writing section -->
-  <section id="blog">
-    <h2>Blog and learning notes</h2>
-   
-    <p>
-      I use this section to write short explanations of ideas from computer architecture,
-      databases, and other modules, so I remember them and can show my understanding.
-    </p>
-    
-    <article>
-      <h3>What is a CPU cache? (short explanation)</h3>
-      <p><strong>Date:</strong> 10 February 2026</p>
-      <p>
-        A CPU cache is a small, very fast type of memory inside the processor. 
-        It stores copies of data that the CPU uses often, so the CPU does not
-        have to wait for slower main memory (RAM). This makes programs run faster.
-      </p>
-    </article>
- 
-    <article>
-      <h3>Intro to normalisation in databases</h3>
-      <p><strong>Date:</strong> 10 February 2026</p>
-      <p>
-        Normalisation is the process of organising tables in a database so that 
-        each table focuses on one topic and there is minimal duplicated data.
-        This helps keep the data consistent and easier to maintain.
-      </p>
-    </article>
- 
-    
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-eyebrow">Available for internships · Summer 2026</div>
+      <h1>Hi, I'm <em>Batuhan</em> —<br>I build for the web.</h1>
+      <p class="hero-sub">First-year Computer Science student at the University of York, focused on backend development and cloud computing.</p>
+      <div class="hero-btns">
+        <a href="projects.html" class="btn btn-primary">View my projects →</a>
+        <a href="contact.html" class="btn btn-outline">Get in touch</a>
+      </div>
+    </div>
   </section>
 
-    
-<section id="production-diary">
-  <h2>Production diary – Week 15</h2>
-  <p><strong>Date:</strong> 10 February 2026</p>
-  <p>
-    This week I worked on my GitHub Pages portfolio website. I focused on
-    creating or improving the main sections (About, Projects, Skills, Contact)
-    and changing the design of my page by using a css file.
-  </p>
-  <p>
-    I am most happy with being able to successfully create my new repository on github and starting to use my HTML knowledge in a real example. 
-  </p>
-  <p>
-    I found it difficult to find creative ways to improve my website.
-  </p>
-  <p>
-    Next time I want to improve my website by adding different pages.
-  </p>
-  <p><strong>Date:</strong> 14 February 2026</p>
-  <p><strong>
-    1. What did you actually build or change this week?</strong></p>
-  <p>This week, I worked on developing my personal website by improving its structure and content. 
-    I added an About Me section that clearly introduces who I am and what I study, and I also created a basic Projects section.
-    And there is a blog section and pruduction diary. I also used a sample CSS file to improve the visual design of the website.</p>
-  <p><strong>
-    2. Which achievement are you most proud of so far on your website?</strong></p>
-  <p>I am most proud of the progress I made in understanding how different parts of the website work together, especially how applying CSS improved the visual appearance and made the site more readable and organised, even though it is still simple.</p>
-  <p><strong>
-    3. What did you find most challenging?</strong></p>
-  <p>
-    The most challenging part was understanding the HTML structure and how it connects with the CSS file. I also found using GitHub challenging at first, especially committing and pushing updates without mistakes.
-  </p>
-  <p><strong>
-    4. What did you learn about web development or computer science maths from this work?
-</strong></p>
-  <p>I learned how basic HTML elements affect the layout of a website, including how headings, sections, and paragraphs structure content and make it easier to read.</p>
-  <p><strong>
-    5. What is one concrete improvement you want to make next week?
-</strong></p>
-  <p>Next week, I want to add more pages to my website, especially the maths part.</p>
-</section>
-  <!-- Contact Form — paste into your HTML where you want the form -->
-<section id="contact">
-<h2>Get In Touch</h2>
-<form id="contact-form">
-<div>
-<label for="name">Your Name</label>
-<input type="text" id="name" name="name" required
-placeholder="Jane Smith" />
-</div>
-<div>
-<label for="email">Your Email</label>
-<input type="email" id="email" name="email" required
-placeholder="jane@example.com" />
-</div>
-<div>
-<label for="message">Message</label>
-<textarea id="message" name="message" required
-placeholder="Say hello..." rows="5"></textarea>
-</div>
-<button type="submit" id="submit-btn">Send Message</button>
-<p id="form-status"></p>
-</form>
-</section>
-   
-  </main>
+  <!-- ABOUT -->
+  <section class="page" id="about">
+    <div class="about-grid">
+      <div>
+        <div class="about-avatar">
+          <span class="avatar-initials">BK</span>
+        </div>
+      </div>
+      <div class="about-content">
+        <p class="section-label">About me</p>
+        <h2>Building reliable apps that solve real problems</h2>
+        <p>I'm a first-year Computer Science student at the University of York, learning the fundamentals of programming, web development, computer architecture, and databases.</p>
+        <p>I'm currently looking for internship and placement opportunities where I can develop my skills in web development and data engineering.</p>
+        <p>Outside my studies, I enjoy hackathons, coding challenges, and working on small side projects — and I'm always looking for new things to learn.</p>
+        <div class="about-tags">
+          <span class="tag">Backend Development</span>
+          <span class="tag">Cloud Computing</span>
+          <span class="tag">Data Engineering</span>
+          <span class="tag">University of York</span>
+          <span class="tag">Year 1 CS</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- SKILLS -->
+  <section class="skills-section">
+    <div class="skills-inner">
+      <p class="section-label">Skills &amp; tools</p>
+      <h2 class="section-title">What I work with</h2>
+      <p class="section-desc">Languages, frameworks, and tools I use day to day.</p>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-icon">🐍</div>
+          <h3>Python</h3>
+          <p>Data scripts, automation, and backend logic. My most-used language.</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">☕</div>
+          <h3>Java</h3>
+          <p>Object-oriented programming and algorithms from my core modules.</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">🌐</div>
+          <h3>HTML &amp; CSS</h3>
+          <p>Semantic markup and responsive layouts. Building this site!</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">⚡</div>
+          <h3>JavaScript</h3>
+          <p>DOM manipulation, async fetch, and Supabase API integrations.</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">🗄️</div>
+          <h3>SQL</h3>
+          <p>Database design, normalisation, and querying in PostgreSQL.</p>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">🔧</div>
+          <h3>Git &amp; GitHub</h3>
+          <p>Version control, GitHub Pages deployment, and collaboration.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOG -->
+  <section class="page" id="blog">
+    <p class="section-label">Blog &amp; notes</p>
+    <h2 class="section-title">Learning in public</h2>
+    <p class="section-desc">Short notes on CS concepts I've been studying. Writing it down helps me remember it.</p>
+    <div class="blog-grid">
+      <div class="blog-card">
+        <p class="blog-date">10 February 2026</p>
+        <h3>What is a CPU cache?</h3>
+        <p>A CPU cache is a small, very fast type of memory inside the processor. It stores copies of data the CPU uses often, so it doesn't have to wait for slower RAM. This makes programs run faster.</p>
+      </div>
+      <div class="blog-card">
+        <p class="blog-date">10 February 2026</p>
+        <h3>Intro to normalisation in databases</h3>
+        <p>Normalisation is the process of organising tables in a database so that each table focuses on one topic and there is minimal duplicated data. This keeps data consistent and easier to maintain.</p>
+      </div>
+      <div class="blog-card">
+        <p class="blog-date">14 February 2026</p>
+        <h3>How HTML and CSS connect</h3>
+        <p>This week I learned how HTML structure and CSS styling work together — how headings, sections, and paragraphs create the skeleton, and CSS controls how it looks on screen.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>Batuhan Kantas <span>·</span> Computer Science, University of York <span>·</span>
+      <a href="https://github.com/sfs561" target="_blank">GitHub</a>
+    </p>
+  </footer>
+
   <script>
-// ── Supabase config ─────────────────────────────────────────────
-// Replace these two values with YOUR project URL and anon key
-const SUPABASE_URL = "https://ihsvjxcamsbvhydwrxga.supabase.co";
-const SUPABASE_ANON = "sb_publishable_OjLAGXrJBRbByPJsdY6arw_NAXjvGSJ";
-// ── Form submission handler ──────────────────────────────────────
-document.getElementById("contact-form")
-.addEventListener("submit", async function (event) {
-// Prevent the default browser form submission (page reload)
-event.preventDefault();
-  // Grab the form values
-const name = document.getElementById("name").value.trim();
-const email = document.getElementById("email").value.trim();
-const message = document.getElementById("message").value.trim();
-const btn = document.getElementById("submit-btn");
-const status = document.getElementById("form-status");
-// Disable the button while we send (prevents double-submit)
-btn.disabled = true;
-btn.textContent = "Sending...";
-status.textContent = "";
-try {
-// Call the Supabase REST API to insert a row
-const response = await fetch(
-`${SUPABASE_URL}/rest/v1/contact_messages`,
-{
-method: "POST",
-headers: {
-"Content-Type": "application/json",
-"apikey": SUPABASE_ANON,
-"Authorization": `Bearer ${SUPABASE_ANON}`,
-"Prefer": "return=minimal"
-},
-body: JSON.stringify({ name, email, message })
-}
-);
-if (response.ok) {
-// Success — show confirmation and reset the form
-status.textContent = "✓ Message sent! I will be in touch soon.";
-status.style.color = "#1A7A4A";
-event.target.reset();
-} else {
-// Supabase returned an error — log it for debugging
-const err = await response.json();
-console.error("Supabase error:", err);
-status.textContent = "Something went wrong. Please try again.";
-status.style.color = "#DC2626";
-}
-} catch (networkError) {
-// Network/connectivity problem
-console.error("Network error:", networkError);
-status.textContent = "Could not connect. Check your internet connection.";
-status.style.color = "#DC2626";
-} finally {
-// Always re-enable the button
-btn.disabled = false;
-btn.textContent = "Send Message";
-}
-});
-</script>
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('nav-links');
+    hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
+  </script>
+
 </body>
 </html>
